@@ -1,0 +1,17 @@
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+input[type="text"], textarea {
+  width: 300px;
+  height: 100px;
+}
+
+button[type="button"] {
+  margin-left: 150px;
+  margin-top: 10px;
+}
