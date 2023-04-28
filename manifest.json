@@ -1,20 +1,24 @@
 {
+  "manifest_version": 2,
   "name": "Outlook AI Reply",
   "version": "1.0",
-  "description": "Reads Outlook web app emails and generates AI-powered replies.",
-  "manifest_version": 2,
-  "permissions": [
-    "activeTab",
-    "clipboardWrite",
-    "https://*.outlook.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["https://*.outlook.com/*"],
-      "js": ["content.js"]
-    }
-  ],
+  "description": "An advanced chrome extension that reads your Outlook web app emails, generates AI-powered replies, and copies them to your clipboard.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://outlook.live.com/*", "*://outlook.office.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }],
   "background": {
-    "scripts": ["background.js"]
-  }
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": ["clipboardWrite", "storage"],
+  "options_page": "options.html",
+  "web_accessible_resources": ["icons/*"]
 }
