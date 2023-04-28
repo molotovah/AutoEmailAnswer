@@ -1,0 +1,20 @@
+{
+  "name": "Outlook AI Reply",
+  "version": "1.0",
+  "description": "Reads Outlook web app emails and generates AI-powered replies.",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "https://*.outlook.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.outlook.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
