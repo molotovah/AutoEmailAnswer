@@ -10,7 +10,7 @@
     "128": "icons/icon128.jpg"
   },
   "content_scripts": [{
-    "matches": ["*://outlook.live.com/*", "*://outlook.office.com/*"],
+    "matches": ["*://outlook.live.com/*", "*://outlook.office365.com/*", "*://outlook.office.com/*"],
     "js": ["content.js"],
     "run_at": "document_end"
   }],
